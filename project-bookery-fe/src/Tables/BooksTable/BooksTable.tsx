@@ -1,12 +1,13 @@
 import React from "react";
 
 import { MRT_ColumnDef, MaterialReactTable } from "material-react-table";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 import booksTableConfig from "./BooksTableConfig";
 import { Book } from "../../Types/bookTypes";
 import booksStyles from "../../Styles/booksStyles";
 import bookMock from "../../Pages/BooksList/booksMock.json";
+import styles from "../../Global/styles";
 
 export const BooksTable = () => {
   const columns = React.useMemo<MRT_ColumnDef<Book>[]>(
@@ -58,28 +59,32 @@ export const BooksTable = () => {
         enableStickyHeader
         enablePinning
         enablePagination
-        
         muiTableContainerProps={{
           sx: booksStyles.tableContainer,
         }}
-        muiTableProps={{
-          sx: booksStyles.table,
-        }}
-        muiTableBodyRowProps={{
-          hover: false
-        }}
-        muiTableBodyCellProps={{
+        renderEmptyRowsFallback={() => (
+          <Typography sx={{ textAlign: "center", py: 2 }}>
+            No books to show
+          </Typography>
+        )}
+        muiTableHeadCellProps={{
+          align: "center",
           sx: {
-            bgcolor: "#20252a",
-            color: '#fff'
+            fontWeight: "bold",
+            borderBottom: `5px solid ${styles.containerBackground}`,
           },
         }}
-        
-        muiTablePaperProps={{
+        muiTableBodyRowProps={{
+          hover: false,
+        }}
+        muiTableBodyCellProps={{
+          align: "center",
           sx: {
-            bgcolor: "blue",
-            m: 1,
-            borderRadius: 50,
+            bgcolor: "#20252a",
+            color: "#fff",
+            border: `5px solid ${styles.containerBackground}`,
+            borderRight: 0,
+            borderLeft: 0,
           },
         }}
         data={bookMock}

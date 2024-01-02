@@ -1,5 +1,6 @@
 export type createStylesFuncProps = {
-  check: boolean;
+  check?: boolean;
+  color?: string;
 };
 
 export type strFormatArgsType = {

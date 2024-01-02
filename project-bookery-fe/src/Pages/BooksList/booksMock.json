@@ -1,23 +1,36 @@
 [
     {
         "title": "Life's Amazing Secrets",
-        "author": "Gaur Gopal Das",
-        "image": "src/assets/c11.jpg",
-        "checkedCount": 2,
-        "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
+        "author": [
+            "Gaur Gopal Das"
+        ],
+        "image": "src/Assets/c11.jpg",
+        "checkList": {
+            "clubs": 2,
+            "individual": 15
+        },
+        "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived. This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
         "comment": {
             "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
+            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years. ",
             "date": "12-12-2022"
         }
     },
     {
         "title": "The Alchamist",
-        "author": "Paulo Coelho",
-        "image": "src/assets/c12.jpg",
-        "checkedCount": 2,
+        "author": [
+            "Paulo Coelho",
+            "Askhat Gupta",
+            "Gaur Gopal Das",
+            "Stephen Fry"
+        ],
+        "image": "src/Assets/c12.jpg",
+        "checkList": {
+            "clubs": 0,
+            "individual": 0
+        },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
             "rating": 4,
@@ -29,9 +42,16 @@
     },
     {
         "title": "The Hidden Hindu",
-        "author": "Askhat Gupta",
-        "image": "src/assets/c13.jpg",
-        "checkedCount": 2,
+        "author": [
+            "Askhat Gupta",
+            "Stephen Fry",
+            "Paulo Coelho"
+        ],
+        "image": "src/Assets/c13.jpg",
+        "checkList": {
+            "clubs": 0,
+            "individual": 15
+        },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
             "rating": 4,
@@ -43,9 +63,14 @@
     },
     {
         "title": "The Covenent Of Water",
-        "author": "Paulo Coelho",
-        "image": "src/assets/c14.jpg",
-        "checkedCount": 2,
+        "author": [
+            "Paulo Coelho"
+        ],
+        "image": "src/Assets/c14.jpg",
+        "checkList": {
+            "clubs": 2,
+            "individual": 0
+        },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
             "rating": 4,
@@ -57,9 +82,14 @@
     },
     {
         "title": "Mythos",
-        "author": "Stephen Fry",
-        "image": "src/assets/c15.jpg",
-        "checkedCount": 2,
+        "author": [
+            "Stephen Fry"
+        ],
+        "image": "src/Assets/c15.jpg",
+        "checkList": {
+            "clubs": 2,
+            "individual": 15
+        },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
             "rating": 4,
@@ -71,9 +101,14 @@
     },
     {
         "title": "The Immortals Of Meluha",
-        "author": "Amish Tripathi",
-        "image": "src/assets/c16.jpg",
-        "checkedCount": 2,
+        "author": [
+            "Amish Tripathi"
+        ],
+        "image": "src/Assets/c16.jpg",
+        "checkList": {
+            "clubs": 2,
+            "individual": 15
+        },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
             "rating": 4,
@@ -85,9 +120,14 @@
     },
     {
         "title": "Project Hail Mary",
-        "author": "Andy Weir",
-        "image": "src/assets/c17.jpg",
-        "checkedCount": 2,
+        "author": [
+            "Andy Weir"
+        ],
+        "image": "src/Assets/c17.jpg",
+        "checkList": {
+            "clubs": 2,
+            "individual": 15
+        },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
             "rating": 4,
@@ -99,9 +139,14 @@
     },
     {
         "title": "Winter Academy - Die Erbin des Mondsteins",
-        "author": "Karolyn Ciseau",
-        "image": "src/assets/c21.jpg",
-        "checkedCount": 2,
+        "author": [
+            "Karolyn Ciseau"
+        ],
+        "image": "src/Assets/c21.jpg",
+        "checkList": {
+            "clubs": 2,
+            "individual": 15
+        },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
             "rating": 4,
@@ -113,9 +158,14 @@
     },
     {
         "title": "La conquista di Ganimede",
-        "author": "Philip K. Dick, Tommaso Pincio - traduttore",
-        "image": "src/assets/c22.jpg",
-        "checkedCount": 2,
+        "author": [
+            "Philip K. Dick, Tommaso Pincio - traduttore"
+        ],
+        "image": "src/Assets/c22.jpg",
+        "checkList": {
+            "clubs": 2,
+            "individual": 15
+        },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
             "rating": 4,
@@ -127,9 +177,14 @@
     },
     {
         "title": "La conquista di Ganimede",
-        "author": "Philip K. Dick, Tommaso Pincio - traduttore",
-        "image": "src/assets/c23.jpg",
-        "checkedCount": 2,
+        "author": [
+            "Philip K. Dick, Tommaso Pincio - traduttore"
+        ],
+        "image": "src/Assets/c23.jpg",
+        "checkList": {
+            "clubs": 2,
+            "individual": 15
+        },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
             "rating": 4,
