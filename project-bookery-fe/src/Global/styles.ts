@@ -2,6 +2,8 @@ const styles = {
   border: "1px solid #30363d",
   borderLight: "1px solid rgba(255,255,255,0.4)",
   blue: "#23a2f6",
+  mainBackground: "#0d1117",
+  containerBackground: "#161b22",
   white1: "rgba(255,255,255,0.1)",
   white2: "rgba(255,255,255,0.2)",
   white3: "rgba(255,255,255,0.3)",

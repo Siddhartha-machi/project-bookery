@@ -17,11 +17,10 @@ const layoutStyles = createStyles({
     overflow: "hidden",
   },
   backgroundCircle: {
-    height: "200px",
-    width: "200px",
+    width: "50%",
+    height: "100vh",
     position: "absolute",
     bgcolor: "pink",
-    borderRadius: "50%",
   },
   firstCircle: {
     background: "linear-gradient(#1845ad,#23a2f6)",
@@ -37,7 +36,7 @@ const layoutStyles = createStyles({
   container: {
     display: "flex",
     flex: 1,
-    borderRadius: "5px",
+    borderRadius: GLOBAL_CONSTANTS.radius,
     position: "absolute",
     left: 15,
     right: 15,
@@ -67,7 +66,7 @@ const layoutStyles = createStyles({
   sidebarItem: {
     display: "flex",
     flexDirection: "column",
-    borderRadius: "10px",
+    borderRadius: GLOBAL_CONSTANTS.radius,
     alignItems: "center",
     justifyContent: "center",
     color: styles.white8,
@@ -77,7 +76,6 @@ const layoutStyles = createStyles({
     py: 1.5,
     mx: 1.5,
     border: styles.borderLight,
-    // border: "1px solid transparent",
     transition: "all 0.2s ease-in-out",
     "&:Hover": {
       backdropFilter: "blur(5px)",
@@ -95,7 +93,6 @@ const layoutStyles = createStyles({
     boxShadow: `0 0 4px 2px ${styles.blue}`,
   },
   sidebarItemIcon: {
-    borderRadius: "3px",
     fontSize: 25,
     color: "inherit",
   },
@@ -126,7 +123,7 @@ const layoutStyles = createStyles({
     top: 10,
     gap: 1.2,
     border: styles.border,
-    borderRadius: "12px",
+    borderRadius: GLOBAL_CONSTANTS.radius,
     color: "#fff",
     justifyContent: "space-between",
     alignItems: "center",
@@ -135,12 +132,19 @@ const layoutStyles = createStyles({
   globalSearch: {
     flex: 1,
     color: "#fff",
-    borderRadius: "10px",
+    borderRadius: GLOBAL_CONSTANTS.radius,
     py: 1.2,
     pl: 1,
   },
   notifications: {
     color: "#fff",
+  },
+  notifyCount: {
+    "& .MuiBadge-badge": {
+      fontSize: 9,
+      height: 15,
+      minWidth: 15,
+    },
   },
   username: {
     fontSize: "13px",

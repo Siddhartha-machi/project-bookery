@@ -30,7 +30,12 @@ const AppLayout = (props: layoutProps) => {
               inputProps={{ "aria-label": "search" }}
             />
             <IconButton sx={layoutStyles.notifications}>
-              <Badge badgeContent={1} color="primary" max={9}>
+              <Badge
+                badgeContent={234}
+                color="primary"
+                max={9}
+                sx={layoutStyles.notifyCount}
+              >
                 <NotificationsRoundedIcon />
               </Badge>
             </IconButton>

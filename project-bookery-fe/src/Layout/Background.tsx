@@ -5,19 +5,19 @@ import { backgroundComponentProps } from "../Types/layoutTypes";
 const Background = ({ children }: backgroundComponentProps) => {
   return (
     <Box sx={layoutStyles.background}>
-      {/* <Box
+      <Box
         sx={{
           ...layoutStyles.backgroundCircle,
           ...layoutStyles.firstCircle,
         }}
-      /> */}
+      />
       {children}
-      {/* <Box
+      <Box
         sx={{
           ...layoutStyles.backgroundCircle,
           ...layoutStyles.secondCircle,
         }}
-      /> */}
+      />
     </Box>
   );
 };
