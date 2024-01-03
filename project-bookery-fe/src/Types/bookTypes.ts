@@ -15,12 +15,15 @@ export type Book = {
     individual: number;
   };
   image: string;
-  comment: {
+  comment?: {
     rating: number;
     user: string;
     title: string;
     description: string;
     date: string;
+  };
+  meta: {
+    liked?: boolean;
   };
 };
 
