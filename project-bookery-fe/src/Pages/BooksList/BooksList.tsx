@@ -8,8 +8,14 @@ import ReorderRoundedIcon from "@mui/icons-material/ReorderRounded";
 
 import booksStyles from "../../Styles/booksStyles";
 import { BooksTable } from "../../Tables/BooksTable/BooksTable";
+import { useAppDispatch } from "../../Redux/hooks";
+import { appLoading } from "../../Redux/Reducers.ts/appSlice";
+import { loadBooksData } from "../../Redux/Reducers.ts/BookSlice";
+import { GetBooks } from "../../Api/APIHandlers/bookAPI";
 
 export const BookList = () => {
+  const dispatch = useAppDispatch();
+
   const actions = React.useMemo(
     () => [
       {
@@ -31,6 +37,14 @@ export const BookList = () => {
     ],
     []
   );
+
+  React.useEffect(() => {
+    GetBooks({
+      dispatch: (data) => dispatch(loadBooksData(data)),
+      loading: (loadVal) => dispatch(appLoading(loadVal)),
+    });
+  }, [dispatch]);
+
   return (
     <Box sx={booksStyles.container}>
       <Box sx={booksStyles.localHeaderWrapper}>
