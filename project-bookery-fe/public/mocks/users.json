@@ -1,0 +1,17 @@
+{
+    "admin": {
+        "first_name": "Siddhartha Reddy",
+        "last_name": "Machi",
+        "role": "admin"
+    },
+    "club_admin": {
+        "first_name": "Nicolas reginarld",
+        "last_name": "Flemming",
+        "role": "club_admin"
+    },
+    "user": {
+        "first_name": "Blake tux",
+        "last_name": "Moran",
+        "role": "user"
+    }
+}
