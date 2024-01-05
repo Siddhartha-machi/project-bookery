@@ -1,17 +1,51 @@
-{
-    "admin": {
+[
+    {
+        "email": "admin@bookery.com",
         "first_name": "Siddhartha Reddy",
         "last_name": "Machi",
+        "password": "Admin#1234",
         "role": "admin"
     },
-    "club_admin": {
+    {
+        "email": "club.admin@gmail.com",
         "first_name": "Nicolas reginarld",
         "last_name": "Flemming",
+        "password": "CAdmin#1234",
         "role": "club_admin"
     },
-    "user": {
+    {
+        "email": "user@bookery.com",
         "first_name": "Blake tux",
         "last_name": "Moran",
+        "password": "User#1234",
+        "role": "user"
+    },
+    {
+        "email": "club.admin@gmail.com",
+        "first_name": "Nicolas reginarld",
+        "last_name": "Flemming",
+        "password": "CAdmin#1234",
+        "role": "club_admin"
+    },
+    {
+        "email": "user@bookery.com",
+        "first_name": "Blake tux",
+        "last_name": "Moran",
+        "password": "User#1234",
+        "role": "user"
+    },
+    {
+        "email": "club.admin@gmail.com",
+        "first_name": "Nicolas reginarld",
+        "last_name": "Flemming",
+        "password": "CAdmin#1234",
+        "role": "club_admin"
+    },
+    {
+        "email": "user@bookery.com",
+        "first_name": "Blake tux",
+        "last_name": "Moran",
+        "password": "User#1234",
         "role": "user"
     }
-}
+]

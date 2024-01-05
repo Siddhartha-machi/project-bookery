@@ -6,4 +6,5 @@ export type apiClientType = {
 export type APIResquestArgsType = {
   dispatch: (data: unknown) => void;
   loading: (loadVal: boolean) => void;
+  data?: Record<string, unknown>;
 };

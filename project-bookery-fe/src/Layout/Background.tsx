@@ -2,13 +2,14 @@ import { Box } from "@mui/material";
 import layoutStyles from "../Styles/layoutStyles";
 import { backgroundComponentProps } from "../Types/layoutTypes";
 
-const Background = ({ children }: backgroundComponentProps) => {
+const Background = ({ children, props }: backgroundComponentProps) => {
   return (
     <Box sx={layoutStyles.background}>
       <Box
         sx={{
           ...layoutStyles.backgroundCircle,
           ...layoutStyles.firstCircle,
+          ...(props && props.firstCircleStyles),
         }}
       />
       {children}
@@ -16,6 +17,7 @@ const Background = ({ children }: backgroundComponentProps) => {
         sx={{
           ...layoutStyles.backgroundCircle,
           ...layoutStyles.secondCircle,
+          ...(props && props.secondCircleStyles),
         }}
       />
     </Box>
