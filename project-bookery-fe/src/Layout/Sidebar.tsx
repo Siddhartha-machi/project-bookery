@@ -10,12 +10,15 @@ import LocalLibraryRoundedIcon from "@mui/icons-material/LocalLibraryRounded";
 
 import layoutStyles from "../Styles/layoutStyles";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useAppSelector } from "../Redux/hooks";
 
 export const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const links = React.useMemo(
-    () => [
+  const { role } = useAppSelector((store) => store.user);
+  
+  const links = React.useMemo(() => {
+    const defaultLinks = [
       {
         label: "Overview",
         path: "/overview",
@@ -41,14 +44,17 @@ export const Sidebar = () => {
         path: "/clubs",
         Icon: Groups3RoundedIcon,
       },
-      {
+    ];
+    if (role === "admin") {
+      defaultLinks.push({
         label: "Users",
         path: "/users",
         Icon: SettingsRoundedIcon,
-      },
-    ],
-    []
-  );
+      });
+    }
+    return defaultLinks;
+  }, [role]);
+  
   return (
     <Box sx={layoutStyles.sidBar}>
       <IconButton

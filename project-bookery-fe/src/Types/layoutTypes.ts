@@ -1,3 +1,4 @@
+import { SxProps } from "@mui/material";
 import { FC } from "react";
 
 export type layoutProps = {
@@ -5,5 +6,14 @@ export type layoutProps = {
 };
 
 export type backgroundComponentProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+  props?: {
+    firstCircleStyles: SxProps;
+    secondCircleStyles: SxProps;
+  };
+};
+
+export type authWapperProps = {
+  Component: FC;
+  AdminView?: boolean;
+};
