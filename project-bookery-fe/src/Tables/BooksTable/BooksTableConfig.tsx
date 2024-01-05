@@ -9,8 +9,8 @@ import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
-import ReplayRoundedIcon from "@mui/icons-material/ReplayRounded";
-import SettingsBackupRestoreRoundedIcon from "@mui/icons-material/SettingsBackupRestoreRounded";
+// import ReplayRoundedIcon from "@mui/icons-material/ReplayRounded";
+// import SettingsBackupRestoreRoundedIcon from "@mui/icons-material/SettingsBackupRestoreRounded";
 import LibraryAddRoundedIcon from "@mui/icons-material/LibraryAddRounded";
 import LibraryAddCheckRoundedIcon from "@mui/icons-material/LibraryAddCheckRounded";
 
@@ -19,6 +19,7 @@ import {
   BookActions,
   BookAuthors,
   BookCheckout,
+  BookComment,
   BookDescription,
   BookImage,
   BookTitle,
@@ -32,12 +33,16 @@ const userActions: bookActionType[] = [
     Icon: FavoriteBorderRoundedIcon,
     ActiveIcon: FavoriteRoundedIcon,
     color: "#e0488f",
+    key: "liked",
+    type: "DD",
   },
   {
     label: "Add to read list",
     activeLabel: "In reading list",
     Icon: BookmarkAddRoundedIcon,
     ActiveIcon: BookmarkAddedRoundedIcon,
+    key: "in_reading_list",
+    type: "DD",
   },
   {
     label: "Read now",
@@ -45,6 +50,8 @@ const userActions: bookActionType[] = [
     Icon: AutoStoriesOutlinedIcon,
     ActiveIcon: AutoStoriesRoundedIcon,
     color: "#43c437",
+    key: "reading",
+    type: "AD",
   },
 ];
 const adminActions: bookActionType[] = [
@@ -53,6 +60,8 @@ const adminActions: bookActionType[] = [
     activeLabel: "Save",
     Icon: EditRoundedIcon,
     ActiveIcon: SaveRoundedIcon,
+    key: "edit",
+    type: "CD",
   },
   {
     label: "Delete",
@@ -60,14 +69,17 @@ const adminActions: bookActionType[] = [
     Icon: DeleteOutlinedIcon,
     ActiveIcon: DeleteRoundedIcon,
     color: "#e64e53",
+    key: "delete",
+    type: "AD",
   },
-  {
-    label: "Revoke all",
-    activeLabel: "Restore all",
-    Icon: ReplayRoundedIcon,
-    ActiveIcon: SettingsBackupRestoreRoundedIcon,
-    color: "#ed9c32",
-  },
+  // {
+  //   label: "Revoke all",
+  //   activeLabel: "Restore all",
+  //   Icon: ReplayRoundedIcon,
+  //   ActiveIcon: SettingsBackupRestoreRoundedIcon,
+  //   color: "#ed9c32",
+  //   key: "revoke",
+  // },
 ];
 const clubAdminActions: bookActionType[] = [
   {
@@ -75,14 +87,9 @@ const clubAdminActions: bookActionType[] = [
     activeLabel: "In club collection",
     Icon: LibraryAddRoundedIcon,
     ActiveIcon: LibraryAddCheckRoundedIcon,
+    key: "in_club_collection",
+    type: "DD",
   },
-  // {
-  //   label: "Read now",
-  //   activeLabel: "Reading now",
-  //   Icon: AutoStoriesOutlinedIcon,
-  //   ActiveIcon: AutoStoriesRoundedIcon,
-  //   color: "#43c437",
-  // },
 ];
 
 const booksTableConfig: MRT_ColumnDef<Book>[] = [
@@ -118,36 +125,29 @@ const booksTableConfig: MRT_ColumnDef<Book>[] = [
   },
 
   {
-    accessorKey: "comment.title",
+    accessorKey: "comment",
     header: "Comment",
-    maxSize: GLOBAL_CONSTANTS.cellWidth,
+    maxSize: GLOBAL_CONSTANTS.cellWidth + 120,
+    Cell: (props) => <BookComment {...props} />,
   },
   {
-    accessorKey: "actions",
+    accessorKey: "user",
     header: "Actions",
     maxSize: GLOBAL_CONSTANTS.cellWidth,
-    Cell: (props) => (
-      <BookActions tableProps={props} label="user" actions={userActions} />
-    ),
+    Cell: (props) => <BookActions tableProps={props} actions={userActions} />,
   },
   {
-    accessorKey: "club_admin_actions",
+    accessorKey: "admin",
+    header: "Admin actions",
+    maxSize: GLOBAL_CONSTANTS.cellWidth,
+    Cell: (props) => <BookActions tableProps={props} actions={adminActions} />,
+  },
+  {
+    accessorKey: "club_admin",
     header: "Club admin actions",
     maxSize: GLOBAL_CONSTANTS.cellWidth,
     Cell: (props) => (
-      <BookActions tableProps={props} label="admin" actions={adminActions} />
-    ),
-  },
-  {
-    accessorKey: "admin_actions",
-    header: "Admin actions",
-    maxSize: GLOBAL_CONSTANTS.cellWidth,
-    Cell: (props) => (
-      <BookActions
-        tableProps={props}
-        label="club-admin"
-        actions={clubAdminActions}
-      />
+      <BookActions tableProps={props} actions={clubAdminActions} />
     ),
   },
 ];

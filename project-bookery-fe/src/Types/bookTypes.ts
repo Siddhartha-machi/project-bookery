@@ -6,6 +6,29 @@ import {
 } from "material-react-table";
 import React from "react";
 
+export type bookUserActionType = {
+  liked: {
+    by_current_user: boolean;
+    count: number;
+  };
+  in_reading_list: {
+    by_current_user: boolean;
+    count: number;
+  };
+  // reading: {
+  //   by_current_user: boolean;
+  //   count: number;
+  // };
+};
+
+export type bookClubAdminActionType = {
+  in_club_collection: boolean;
+};
+
+export type adminActionType = {
+  deleted: boolean;
+};
+
 export type Book = {
   title: string;
   author: string[];
@@ -15,15 +38,17 @@ export type Book = {
     individual: number;
   };
   image: string;
-  comment?: {
-    rating: number;
-    user: string;
-    title: string;
-    description: string;
-    date: string;
-  };
-  meta: {
-    liked?: boolean;
+  comment:
+    | {
+        user: string;
+        title: string;
+        date: string;
+      }
+    | undefined;
+  actions: {
+    user: bookUserActionType;
+    club_admin: bookClubAdminActionType;
+    admin: adminActionType;
   };
 };
 
@@ -42,9 +67,14 @@ export type bookActionType = {
   Icon: React.ElementType;
   ActiveIcon: React.ElementType;
   color?: string;
+  type: "DD" | "AD" | "CD";
+  key:
+    | keyof bookUserActionType
+    | keyof bookClubAdminActionType
+    | keyof adminActionType
+    | string;
 };
 export type bookActionsType = {
   tableProps: tableCellProps;
-  label: string;
   actions: bookActionType[];
 };
