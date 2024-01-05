@@ -11,11 +11,14 @@
         },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived. This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
         "comment": {
-            "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years. ",
             "date": "12-12-2022"
+        },
+        "actions": {
+            "liked": false,
+            "in_reading_list": false,
+            "reading": true
         }
     },
     {
@@ -26,12 +29,17 @@
             "Gaur Gopal Das",
             "Stephen Fry"
         ],
+        "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "image": "src/Assets/c12.jpg",
         "checkList": {
             "clubs": 0,
             "individual": 0
         },
-        "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived."
+        "actions": {
+            "liked": false,
+            "in_reading_list": false,
+            "reading": true
+        }
     },
     {
         "title": "The Hidden Hindu",
@@ -47,11 +55,14 @@
         },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
-            "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
             "date": "12-12-2022"
+        },
+        "actions": {
+            "liked": true,
+            "in_reading_list": false,
+            "reading": true
         }
     },
     {
@@ -66,11 +77,14 @@
         },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
-            "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
             "date": "12-12-2022"
+        },
+        "actions": {
+            "liked": false,
+            "in_reading_list": true,
+            "reading": true
         }
     },
     {
@@ -85,11 +99,14 @@
         },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
-            "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
             "date": "12-12-2022"
+        },
+        "actions": {
+            "liked": false,
+            "in_reading_list": false,
+            "reading": true
         }
     },
     {
@@ -104,11 +121,14 @@
         },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
-            "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
             "date": "12-12-2022"
+        },
+        "actions": {
+            "liked": false,
+            "in_reading_list": false,
+            "reading": true
         }
     },
     {
@@ -123,11 +143,14 @@
         },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
-            "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
             "date": "12-12-2022"
+        },
+        "actions": {
+            "liked": false,
+            "in_reading_list": false,
+            "reading": true
         }
     },
     {
@@ -142,11 +165,14 @@
         },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
-            "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
             "date": "12-12-2022"
+        },
+        "actions": {
+            "liked": false,
+            "in_reading_list": false,
+            "reading": true
         }
     },
     {
@@ -161,11 +187,14 @@
         },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
-            "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
             "date": "12-12-2022"
+        },
+        "actions": {
+            "liked": false,
+            "in_reading_list": false,
+            "reading": true
         }
     },
     {
@@ -180,11 +209,14 @@
         },
         "description": "The year 1900 BC. In what modern Indians mistakenly call the Indus Valley Civilisation. The inhabitants of that period called it the land of Meluha–a near perfect empire created many centuries earlier by Lord Ram, one of the greatest monarchs that ever lived.",
         "comment": {
-            "rating": 4,
             "user": "Vishnu chevli",
             "title": "An spellbinding book and a master narrator",
-            "description": "This is one of the best works of Amish Tripathi till date, and the inclusion of Manish Dongardive as the narrator has taken this book to a whole new level. I think I'll keep revisiting this audiobook after every few years.",
             "date": "12-12-2022"
+        },
+        "actions": {
+            "liked": false,
+            "in_reading_list": false,
+            "reading": true
         }
     }
 ]

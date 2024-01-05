@@ -141,9 +141,22 @@ const booksStyles = createStyles({
   }),
   bookCheckout: {
     flexDirection: "column",
+    gap: 1,
   },
   bookCheckoutText: {
     fontSize: "13px",
+  },
+  bookCommentWrapper: {
+    flexDirection: "column",
+    gap: 1,
+  },
+  bookComment: {
+    fontSize: "14px",
+    fontStyle: "italic",
+  },
+  commentBy: {
+    fontSize: "10px",
+    color: styles.white3,
   },
 });
 

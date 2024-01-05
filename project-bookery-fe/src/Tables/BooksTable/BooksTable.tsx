@@ -1,7 +1,7 @@
 import React from "react";
 
 import { MRT_ColumnDef, MaterialReactTable } from "material-react-table";
-import { Box, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 
 import booksTableConfig from "./BooksTableConfig";
 import { Book } from "../../Types/bookTypes";
@@ -16,7 +16,6 @@ export const BooksTable = () => {
     []
   );
 
-
   return (
     <Box sx={booksStyles.tableWrapper}>
       <MaterialReactTable
@@ -29,6 +28,7 @@ export const BooksTable = () => {
         enableStickyHeader
         enablePinning
         enablePagination
+        editDisplayMode="table"
         muiTableContainerProps={{
           sx: booksStyles.tableContainer,
         }}
@@ -37,6 +37,20 @@ export const BooksTable = () => {
             No books to show
           </Typography>
         )}
+        renderDetailPanel={() => {
+          return (
+            <Box
+              sx={{
+                display: "flex",
+                height: 300,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <CircularProgress />
+            </Box>
+          );
+        }}
         muiTableHeadCellProps={{
           align: "center",
           sx: {

@@ -1,9 +1,22 @@
 import React from "react";
 
 import { Box } from "@mui/system";
-import { bookActionsType, tableCellProps } from "../../Types/bookTypes";
+import {
+  Book,
+  adminActionType,
+  bookActionsType,
+  bookClubAdminActionType,
+  bookUserActionType,
+  tableCellProps,
+} from "../../Types/bookTypes";
 import booksStyles from "../../Styles/booksStyles";
-import { Button, Chip, Stack, Typography } from "@mui/material";
+import {
+  Button,
+  Chip,
+  // CircularProgress,
+  Stack,
+  Typography,
+} from "@mui/material";
 
 import styles from "../../Global/styles";
 
@@ -81,10 +94,10 @@ export const BookDescription = (props: tableCellProps) => {
 };
 
 export const BookActions = (props: bookActionsType) => {
-  const { actions, label } = props;
-  const [state, setState] = React.useState<boolean[]>(
-    Array.from(Array(3)).map(() => false)
-  );
+  const { actions, tableProps } = props;
+  const { column } = tableProps;
+  const [state, setState] = React.useState<boolean[]>([]);
+
   const selectHandler = (index: number) => {
     setState((prev) => {
       const newState = [...prev];
@@ -92,6 +105,35 @@ export const BookActions = (props: bookActionsType) => {
       return newState;
     });
   };
+  const key = React.useMemo(
+    () => column.columnDef.accessorKey as keyof Book["actions"],
+    [column.columnDef.accessorKey]
+  );
+
+  React.useEffect(() => {
+    let initialState: boolean[] = [];
+
+    const itemActions = tableProps.row.original.actions;
+    if (key === "user") {
+      initialState = actions.map((action) => {
+        const actionKey = action.key as keyof bookUserActionType;
+        return itemActions[key]?.[actionKey].by_current_user || false;
+      });
+    } else if (key === "admin") {
+      initialState = actions.map((action) => {
+        const actionKey = action.key as keyof adminActionType;
+        return itemActions[key]?.[actionKey] || false;
+      });
+    } else {
+      initialState = actions.map((action) => {
+        const actionKey = action.key as keyof bookClubAdminActionType;
+        return itemActions[key]?.[actionKey] || false;
+      });
+    }
+
+    setState(initialState);
+  }, [actions, key, tableProps.row.original]);
+
   return (
     <Box sx={{ ...booksStyles.cellWrapper, ...booksStyles.bookActionsWrapper }}>
       {actions.map((action, index) => {
@@ -99,7 +141,7 @@ export const BookActions = (props: bookActionsType) => {
           <Button
             fullWidth
             disableRipple
-            key={`${label}-action-${index}`}
+            key={`${key}-action-${index}`}
             startIcon={state[index] ? <action.ActiveIcon /> : <action.Icon />}
             sx={{
               ...booksStyles.actionButton({
@@ -131,9 +173,26 @@ export const BookCheckout = (props: tableCellProps) => {
           {checkList.individual} people are reading this book
         </Typography>
       )}
-      {checkList.clubs < 1 && checkList.individual < 1 && (
-        <Typography sx={booksStyles.bookCheckoutText}>No checkouts</Typography>
-      )}
     </Box>
   );
+};
+
+export const BookComment = (props: tableCellProps) => {
+  const comment = props.row.original.comment;
+  if (comment) {
+    return (
+      <Box
+        sx={{ ...booksStyles.cellWrapper, ...booksStyles.bookCommentWrapper }}
+      >
+        <Typography sx={booksStyles.bookComment}>
+          <q>{comment.title}</q>
+        </Typography>
+
+        <Typography sx={booksStyles.commentBy}>
+          - by {comment.user} on {comment.date}
+        </Typography>
+      </Box>
+    );
+  }
+  return null;
 };
