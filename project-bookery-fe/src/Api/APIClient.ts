@@ -35,10 +35,25 @@ export default class APIClient {
 
     return {
       data: currentUserData,
-      status: found ? 200 : 404,
+      status: found ? 200 : 400,
     };
   }
+  async #registerUser(userData, data) {
+    const { formData } = data;
+    let found = false;
 
+    userData.data.forEach((user) => {
+      if (user.email === formData?.email) {
+        found = true;
+      }
+    });
+
+    return {
+      data: [],
+      status: found ? 400 : 200,
+      message: found ? "User already exists with the provided email" : "",
+    };
+  }
   async get() {
     if (this.#mock) {
       await this.#mockClient();
@@ -48,8 +63,11 @@ export default class APIClient {
   async post(postData: Record<string, unknown>) {
     if (this.#mock) {
       const response = await this.get();
-      if (postData.type === "user") {
+      if (postData.type === "user-login") {
         return await this.#authenticateUser(response, postData);
+      }
+      if (postData.type === "user-register") {
+        return await this.#registerUser(response, postData);
       }
       return response;
     }

@@ -84,6 +84,7 @@ const authStyles = createStyles({
     p: 0,
     textTransform: "none",
     fontSize: "12px",
+    fontWeight: 'bold'
   },
   submitButton: {
     textTransform: "none",

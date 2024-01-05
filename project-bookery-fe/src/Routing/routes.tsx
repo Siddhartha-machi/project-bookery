@@ -7,6 +7,7 @@ import AuthWrapper from "../Layout/AuthWrapper";
 
 import Login from "../Pages/Auth/Login";
 import { Box } from "@mui/material";
+import Register from "../Pages/Auth/Register";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <Login />,
+    element: <Register />,
   },
 ]);
 

@@ -14,3 +14,12 @@ export const authenticateUser = async (params: APIResquestArgsType) => {
   loading(false);
   return response;
 };
+
+export const registerUser = async (params: APIResquestArgsType) => {
+  const { loading, dispatch, data } = params;
+  loading(true);
+  const response = await UserAPI.post(data ? data : {});
+  dispatch(response?.data);
+  loading(false);
+  return response;
+};

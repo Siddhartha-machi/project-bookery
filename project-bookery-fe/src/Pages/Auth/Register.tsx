@@ -27,7 +27,7 @@ import {
   validateEmail,
 } from "../../Helpers/StringFunctions";
 
-const Login = () => {
+const Register = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { role } = useAppSelector((store) => store.user);
@@ -37,6 +37,10 @@ const Login = () => {
       error: false,
     },
     password: {
+      value: "",
+      error: false,
+    },
+    confirmPassword: {
       value: "",
       error: false,
     },
@@ -51,7 +55,24 @@ const Login = () => {
   ) => {
     setFormState((prev) => ({
       email: { ...prev.email },
+      confirmPassword: {
+        ...prev.confirmPassword,
+      },
       password: {
+        value: e.target.value,
+        error: false,
+      },
+    }));
+  };
+  const confrimPasswordChangeHandler = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    setFormState((prev) => ({
+      email: { ...prev.email },
+      password: {
+        ...prev.password,
+      },
+      confirmPassword: {
         value: e.target.value,
         error: false,
       },
@@ -62,6 +83,9 @@ const Login = () => {
   ) => {
     setFormState((prev) => ({
       password: { ...prev.password },
+      confirmPassword: {
+        ...prev.confirmPassword,
+      },
       email: {
         value: e.target.value,
         error: false,
@@ -76,7 +100,10 @@ const Login = () => {
     if (e.key === "Enter") {
       let focusFieldName = "password";
       if (e.currentTarget.id === "password") {
-        focusFieldName = "signin";
+        focusFieldName = "confirm-password";
+      }
+      if (e.currentTarget.id === "confirm-password") {
+        focusFieldName = "signup";
       }
 
       e.preventDefault();
@@ -84,8 +111,8 @@ const Login = () => {
     }
   };
 
-  const navigateToSignUp = () => {
-    navigate("/signup");
+  const navigateToSignIn = () => {
+    navigate("/signin");
   };
 
   const runValidations = () => {
@@ -97,6 +124,10 @@ const Login = () => {
     }
     if (!checkPasswordStrength(formState.password.value)) {
       newState.password.error = true;
+      failed = true;
+    }
+    if (formState.password.value !== formState.confirmPassword.value) {
+      newState.confirmPassword.error = true;
       failed = true;
     }
     setFormState(newState);
@@ -115,11 +146,11 @@ const Login = () => {
           email: formState.email.value,
           password: formState.password.value,
         },
-        type: "user-login",
+        type: "user-register",
       },
     });
     if (response?.status === 200) {
-      navigate(-1);
+      navigate("/overview");
     }
     setResponseError(true);
   };
@@ -145,14 +176,14 @@ const Login = () => {
         <Box sx={authStyles.header}>
           <SITE_ICON sx={{ fontSize: "50px" }} />
           <Typography sx={authStyles.loginTitle}>
-            Sign In to {GLOBAL_CONSTANTS.title}
+            SignUp for {GLOBAL_CONSTANTS.title}
           </Typography>
         </Box>
 
         {responseError && (
           <Typography sx={authStyles.serverError}>
             <ErrorRoundedIcon />
-            Invalid credentials
+            Unable to complete the registration, try after sometime
           </Typography>
         )}
         <Box sx={authStyles.fieldWrapper}>
@@ -227,8 +258,49 @@ const Login = () => {
             </Typography>
           )}
         </Box>
+        <Box sx={authStyles.fieldWrapper}>
+          <Typography
+            sx={authStyles.labelText({
+              check: formState.confirmPassword.error,
+            })}
+          >
+            Confirm password
+          </Typography>
+          <InputBase
+            id="confirm-password"
+            type={showPassword ? "text" : "password"}
+            error={formState.confirmPassword.error}
+            sx={{ ...authStyles.textField, ...authStyles.password }}
+            placeholder="Mirana@8263"
+            value={formState.confirmPassword.value}
+            fullWidth
+            onChange={confrimPasswordChangeHandler}
+            onKeyDown={switchFocus}
+            startAdornment={<KeyRoundedIcon sx={authStyles.adornmentIcon} />}
+            endAdornment={
+              <IconButton
+                onClick={handleClickShowPassword}
+                sx={authStyles.adornmentIconButton}
+              >
+                {showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            }
+            inputProps={{
+              "aria-label": "user password field",
+              style: {
+                padding: "12px 0px 12px 8px",
+                fontWeight: "bold",
+              },
+            }}
+          />
+          {formState.confirmPassword.error && (
+            <Typography sx={authStyles.errorText}>
+              Password and confirm password did not match
+            </Typography>
+          )}
+        </Box>
         <Button
-          id="signin"
+          id="signup"
           fullWidth
           disabled={disableSubmit}
           variant="contained"
@@ -238,18 +310,18 @@ const Login = () => {
           {loading ? (
             <CircularProgress size="1.5rem" sx={{ color: "#fff" }} />
           ) : (
-            "Sign In"
+            "SignUp"
           )}
         </Button>
 
         <Typography sx={{ textAlign: "center", width: "100%" }}>
-          Don't have an account ?
+          Already have an account ?
           <Button
             sx={authStyles.inLineButton}
             disableRipple
-            onClick={navigateToSignUp}
+            onClick={navigateToSignIn}
           >
-            SignUp
+            SignIn
           </Button>
           here!
         </Typography>
@@ -258,4 +330,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
