@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 
 import routeStyles from "../Styles/routeStyles";
 import { useLocation, useNavigate } from "react-router-dom";
-import strFormat from "../Helpers/StringFormatters";
+import { strFormat } from "../Helpers/StringFunctions";
 
 const UnderProgress = () => {
   const navigate = useNavigate();
