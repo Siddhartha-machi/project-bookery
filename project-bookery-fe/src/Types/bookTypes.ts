@@ -1,10 +1,5 @@
-import {
-  MRT_Cell,
-  MRT_Column,
-  MRT_Row,
-  MRT_TableInstance,
-} from "material-react-table";
 import React from "react";
+import { tableCellProps } from "./tableTypes";
 
 export type bookUserActionType = {
   liked: {
@@ -15,10 +10,6 @@ export type bookUserActionType = {
     by_current_user: boolean;
     count: number;
   };
-  // reading: {
-  //   by_current_user: boolean;
-  //   count: number;
-  // };
 };
 
 export type bookClubAdminActionType = {
@@ -52,15 +43,6 @@ export type Book = {
   };
 };
 
-export type tableCellProps = {
-  cell: MRT_Cell<Book, unknown>;
-  column: MRT_Column<Book, unknown>;
-  renderedCellValue: React.ReactNode;
-  row: MRT_Row<Book>;
-  rowRef?: React.RefObject<HTMLTableRowElement> | undefined;
-  table: MRT_TableInstance<Book>;
-};
-
 export type bookActionType = {
   label: string;
   activeLabel: string;
@@ -75,6 +57,6 @@ export type bookActionType = {
     | string;
 };
 export type bookActionsType = {
-  tableProps: tableCellProps;
+  tableProps: tableCellProps<Book>;
   actions: bookActionType[];
 };

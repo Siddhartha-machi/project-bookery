@@ -3,13 +3,14 @@ import {
   Backdrop,
   Badge,
   Box,
-  // CircularProgress,
   IconButton,
   InputBase,
   Typography,
 } from "@mui/material";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
+import AdminPanelSettingsRoundedIcon from "@mui/icons-material/AdminPanelSettingsRounded";
+import SupervisedUserCircleRoundedIcon from "@mui/icons-material/SupervisedUserCircleRounded";
 
 import { layoutProps } from "../Types/layoutTypes";
 import layoutStyles from "../Styles/layoutStyles";
@@ -21,13 +22,19 @@ import { Loader } from "../Global/SupportComponets/Loader";
 
 const AppLayout = (props: layoutProps) => {
   const { Component } = props;
-  const { loading } = useAppSelector((store) => store.app);
+  const { loading, loadingLabel } = useAppSelector((store) => store.app);
+  const currentUser = useAppSelector((store) => store.user.currentUser);
+  const { first_name, last_name, role } = currentUser;
+
   return (
     <Background>
       <Box sx={layoutStyles.container}>
         <Sidebar />
         <Backdrop sx={{ color: "#fff", zIndex: 10000 }} open={loading}>
-          <Loader size={60} message="Loading books please wait..." />
+          <Loader
+            size={60}
+            message={`Loading ${loadingLabel} please wait...`}
+          />
         </Backdrop>
         <Box sx={layoutStyles.content}>
           <Box sx={layoutStyles.stickyHeader}>
@@ -47,7 +54,22 @@ const AppLayout = (props: layoutProps) => {
                 <NotificationsRoundedIcon />
               </Badge>
             </IconButton>
-            <Typography sx={layoutStyles.username}>Hey, Siddhartha</Typography>
+            <Box sx={layoutStyles.userDetail}>
+              <Typography sx={layoutStyles.username}>
+                Hey, {first_name} {last_name}
+              </Typography>
+              {role !== "user" && (
+                <Box sx={layoutStyles.roleWrapper}>
+                  {role === "admin" ? (
+                    <AdminPanelSettingsRoundedIcon fontSize="small" />
+                  ) : (
+                    <SupervisedUserCircleRoundedIcon fontSize="small" />
+                  )}
+                  <Typography sx={layoutStyles.inlineRole}>{role}</Typography>
+                </Box>
+              )}
+            </Box>
+
             <Avatar alt="user avatar" src={avatar} sx={layoutStyles.avatar} />
           </Box>
           <Component />

@@ -30,7 +30,7 @@ import {
 const Login = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { role } = useAppSelector((store) => store.user);
+  const { role } = useAppSelector((store) => store.user.currentUser);
   const [formState, setFormState] = React.useState({
     email: {
       value: "",
@@ -230,7 +230,7 @@ const Login = () => {
         <Button
           id="signin"
           fullWidth
-          disabled={disableSubmit}
+          disabled={disableSubmit || loading}
           variant="contained"
           onClick={onSubmitHandler}
           sx={authStyles.submitButton}

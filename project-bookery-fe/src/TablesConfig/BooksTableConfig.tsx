@@ -14,7 +14,7 @@ import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 import LibraryAddRoundedIcon from "@mui/icons-material/LibraryAddRounded";
 import LibraryAddCheckRoundedIcon from "@mui/icons-material/LibraryAddCheckRounded";
 
-import { Book, bookActionType } from "../../Types/bookTypes";
+import { Book, bookActionType } from "../Types/bookTypes";
 import {
   BookActions,
   BookAuthors,
@@ -23,8 +23,8 @@ import {
   BookDescription,
   BookImage,
   BookTitle,
-} from "../../Pages/BooksList/BooksAtom";
-import GLOBAL_CONSTANTS from "../../Global/Constants";
+} from "../Pages/BooksList/BooksAtom";
+import GLOBAL_CONSTANTS from "../Global/Constants";
 
 const userActions: bookActionType[] = [
   {

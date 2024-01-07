@@ -111,7 +111,22 @@ const layoutStyles = createStyles({
       borderBottom: `1px solid ${styles.white8}`,
     },
   },
-  divider: {},
+  userDetail: {
+    display: "flex",
+    flexDirection: "column",
+    ml: 0.5,
+  },
+  roleWrapper: {
+    display: "flex",
+    ml: "auto",
+    alignItems: "center",
+    gap: 0.8,
+  },
+  inlineRole: {
+    display: "flex",
+    fontSize: "10px",
+    fontWeight: "bold",
+  },
   sidbarItemText: {
     fontSize: "12px",
     fontWeight: "bold",
@@ -133,7 +148,7 @@ const layoutStyles = createStyles({
     flex: 1,
     color: "#fff",
     borderRadius: GLOBAL_CONSTANTS.radius,
-    py: 1.2,
+    py: 1.3,
     pl: 1,
   },
   notifications: {
