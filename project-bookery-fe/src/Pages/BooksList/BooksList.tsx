@@ -39,7 +39,7 @@ export const BookList = () => {
         Icon: AddRoundedIcon,
       },
       {
-        label: "Import",
+        label: "Import books",
         Icon: BackupRoundedIcon,
       },
     ],

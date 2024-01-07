@@ -34,7 +34,8 @@ const userStyles = createStyles({
     fontSize: "13px",
     fontWeight: "bold",
     color,
-  }),
+    }),
+
 });
 
 export default userStyles;

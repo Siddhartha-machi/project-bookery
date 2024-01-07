@@ -19,6 +19,7 @@ import Background from "./Background";
 import avatar from "../Assets/img5.jpeg";
 import { useAppSelector } from "../Redux/hooks";
 import { Loader } from "../Global/SupportComponets/Loader";
+import { strFormat } from "../Helpers/StringFunctions";
 
 const AppLayout = (props: layoutProps) => {
   const { Component } = props;
@@ -65,7 +66,13 @@ const AppLayout = (props: layoutProps) => {
                   ) : (
                     <SupervisedUserCircleRoundedIcon fontSize="small" />
                   )}
-                  <Typography sx={layoutStyles.inlineRole}>{role}</Typography>
+                  <Typography sx={layoutStyles.inlineRole}>
+                    {strFormat({
+                      str: role as string,
+                      replace: "_",
+                      replacement: " ",
+                    })}
+                  </Typography>
                 </Box>
               )}
             </Box>
