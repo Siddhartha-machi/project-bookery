@@ -15,7 +15,7 @@ import { useAppSelector } from "../Redux/hooks";
 export const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { role } = useAppSelector((store) => store.user);
+  const { role } = useAppSelector((store) => store.user.currentUser);
   
   const links = React.useMemo(() => {
     const defaultLinks = [

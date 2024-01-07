@@ -4,48 +4,62 @@
         "first_name": "Siddhartha Reddy",
         "last_name": "Machi",
         "password": "Admin#1234",
-        "role": "admin"
+        "role": "admin",
+        "joined_date": "12th July 2012",
+        "active": true
     },
     {
         "email": "club.admin@gmail.com",
         "first_name": "Nicolas reginarld",
         "last_name": "Flemming",
         "password": "CAdmin#1234",
-        "role": "club_admin"
+        "role": "club_admin",
+        "joined_date": "12th July 2012",
+        "active": false
     },
     {
         "email": "user@bookery.com",
         "first_name": "Blake tux",
         "last_name": "Moran",
         "password": "User#1234",
-        "role": "user"
+        "role": "user",
+        "joined_date": "12th July 2012",
+        "active": true
     },
     {
         "email": "club.admin@gmail.com",
         "first_name": "Nicolas reginarld",
         "last_name": "Flemming",
         "password": "CAdmin#1234",
-        "role": "club_admin"
+        "role": "club_admin",
+        "joined_date": "12th July 2012",
+        "active": false
     },
     {
         "email": "user@bookery.com",
         "first_name": "Blake tux",
         "last_name": "Moran",
         "password": "User#1234",
-        "role": "user"
+        "role": "user",
+        "joined_date": "12th July 2012",
+        "active": true
     },
     {
         "email": "club.admin@gmail.com",
         "first_name": "Nicolas reginarld",
         "last_name": "Flemming",
         "password": "CAdmin#1234",
-        "role": "club_admin"
+        "role": "club_admin",
+        "joined_date": "12th July 2012",
+        "active": true
     },
     {
         "email": "user@bookery.com",
         "first_name": "Blake tux",
         "last_name": "Moran",
         "password": "User#1234",
-        "role": "user"
+        "role": "user",
+        "joined_date": "12th July 2012",
+        "active": true
     }
 ]

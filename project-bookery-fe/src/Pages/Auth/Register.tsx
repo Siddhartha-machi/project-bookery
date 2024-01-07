@@ -30,7 +30,7 @@ import {
 const Register = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { role } = useAppSelector((store) => store.user);
+  const { role } = useAppSelector((store) => store.user.currentUser);
   const [formState, setFormState] = React.useState({
     email: {
       value: "",

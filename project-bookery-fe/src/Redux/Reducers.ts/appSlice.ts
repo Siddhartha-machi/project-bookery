@@ -3,13 +3,15 @@ import { appState } from "../../Types/reduxTypes";
 
 const initialState: appState = {
   loading: false,
+  loadingLabel: "",
 };
 const appSlice = createSlice({
   name: "app-slice",
   initialState,
   reducers: {
     appLoading: (state, action) => {
-      state.loading = action.payload;
+      state.loading = action.payload.loadVal;
+      state.loadingLabel = action.payload.label;
     },
   },
 });

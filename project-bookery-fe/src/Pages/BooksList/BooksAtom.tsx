@@ -1,26 +1,24 @@
 import React from "react";
 
 import { Box } from "@mui/system";
+import { MRT_RowData } from "material-react-table";
+import { Button, Chip, Stack, Typography } from "@mui/material";
+
 import {
   Book,
   adminActionType,
   bookActionsType,
   bookClubAdminActionType,
   bookUserActionType,
-  tableCellProps,
 } from "../../Types/bookTypes";
 import booksStyles from "../../Styles/booksStyles";
-import {
-  Button,
-  Chip,
-  // CircularProgress,
-  Stack,
-  Typography,
-} from "@mui/material";
 
 import styles from "../../Global/styles";
+import { tableCellProps } from "../../Types/tableTypes";
 
-export const BookImage = (props: tableCellProps) => {
+export const BookImage = <TData extends MRT_RowData>(
+  props: tableCellProps<TData>
+) => {
   const { row } = props;
   return (
     <Box sx={booksStyles.cellWrapper}>
@@ -33,7 +31,9 @@ export const BookImage = (props: tableCellProps) => {
   );
 };
 
-export const BookTitle = (props: tableCellProps) => {
+export const BookTitle = <TData extends MRT_RowData>(
+  props: tableCellProps<TData>
+) => {
   const { row } = props;
   return (
     <Box sx={booksStyles.cellWrapper}>
@@ -44,7 +44,9 @@ export const BookTitle = (props: tableCellProps) => {
   );
 };
 
-export const BookAuthors = (props: tableCellProps) => {
+export const BookAuthors = <TData extends MRT_RowData>(
+  props: tableCellProps<TData>
+) => {
   const authors = props.row.original?.author || [];
   const title = props.row.original?.author || "none";
   const authorsLength = authors.length;
@@ -72,7 +74,9 @@ export const BookAuthors = (props: tableCellProps) => {
   );
 };
 
-export const BookDescription = (props: tableCellProps) => {
+export const BookDescription = <TData extends MRT_RowData>(
+  props: tableCellProps<TData>
+) => {
   const [showMore, setshowMore] = React.useState(false);
   const description = props.row.original?.description || "";
   const truncateStyles = React.useMemo(
@@ -159,7 +163,9 @@ export const BookActions = (props: bookActionsType) => {
   );
 };
 
-export const BookCheckout = (props: tableCellProps) => {
+export const BookCheckout = <TData extends MRT_RowData>(
+  props: tableCellProps<TData>
+) => {
   const { checkList } = props.row.original || {};
   return (
     <Box sx={{ ...booksStyles.cellWrapper, ...booksStyles.bookCheckout }}>
@@ -177,7 +183,9 @@ export const BookCheckout = (props: tableCellProps) => {
   );
 };
 
-export const BookComment = (props: tableCellProps) => {
+export const BookComment = <TData extends MRT_RowData>(
+  props: tableCellProps<TData>
+) => {
   const comment = props.row.original.comment;
   if (comment) {
     return (

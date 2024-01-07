@@ -23,3 +23,12 @@ export const registerUser = async (params: APIResquestArgsType) => {
   loading(false);
   return response;
 };
+
+export const loadUsers = async (params: APIResquestArgsType) => {
+  const { loading, dispatch } = params;
+  loading(true);
+  const response = await UserAPI.get();
+  dispatch(response?.data);
+  loading(false);
+  return response;
+};

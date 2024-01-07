@@ -64,7 +64,7 @@ const booksStyles = createStyles({
   cellWrapper: {
     height: "120px",
     display: "flex",
-    m: -1,
+    py: 1.2,
     alignItems: "center",
     justifyContent: "center",
   },

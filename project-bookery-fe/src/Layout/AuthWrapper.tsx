@@ -10,7 +10,7 @@ const PageNotFound = () => {
 };
 const AuthWrapper = (props: authWapperProps) => {
   const { AdminView, Component } = props;
-  const { role } = useAppSelector((store) => store.user);
+  const { role } = useAppSelector((store) => store.user.currentUser);
 
   if (!role) {
     return <Navigate to={"/signin"} />;
