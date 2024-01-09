@@ -11,6 +11,7 @@ import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
 import AppLayout from "../Layout/AppLayout";
 import PageNotFound from "../Layout/PageNotFound";
+import UserAccount from "../Pages/Accounts/UserAccount";
 
 const router = createBrowserRouter([
   {
@@ -27,21 +28,16 @@ const router = createBrowserRouter([
         element: <AuthWrapper Component={UnderProgress} />,
       },
       {
-        path: "/books-list",
+        path: "/archive",
         element: <AuthWrapper Component={BooksList} />,
       },
       {
         path: "/clubs",
         element: <AuthWrapper Component={UnderProgress} />,
       },
-
-      {
-        path: "/register",
-        element: <AuthWrapper Component={UnderProgress} />,
-      },
       {
         path: "/account",
-        element: <AuthWrapper Component={UnderProgress} />,
+        element: <AuthWrapper Component={UserAccount} />,
       },
 
       {

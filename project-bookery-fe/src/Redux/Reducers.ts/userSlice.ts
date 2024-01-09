@@ -6,7 +6,7 @@ const initialState: userState = {
   currentUser: {
     first_name: "Siddhartha Reddy",
     last_name: "Machi",
-    role: ROLES.club_admin,
+    role: null,
     username: null,
   },
   usersList: [],

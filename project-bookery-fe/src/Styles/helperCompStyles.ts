@@ -1,3 +1,4 @@
+import styles from "../Global/styles";
 import createStyles from "../Helpers/createStyles";
 import { createStylesFuncProps } from "../Types/helperTypes";
 
@@ -6,6 +7,13 @@ const helperStyles = createStyles({
     display: "flex",
     flexDirection: "column",
     gap: 2,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  loaderSubContainer: {
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -33,6 +41,7 @@ const helperStyles = createStyles({
     bgcolor: "primary.main",
     borderRadius: "50%",
     ...(spread && spread),
+    boxShadow: `0 0 12px 1px ${styles.blue}`,
   }),
   loadingText: {
     fontSize: "14px",

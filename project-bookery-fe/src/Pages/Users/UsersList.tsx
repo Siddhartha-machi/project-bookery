@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Button, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import BackupRoundedIcon from "@mui/icons-material/BackupRounded";
 import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
@@ -12,12 +12,13 @@ import { loadUsers } from "../../Api/APIHandlers/userHandlers";
 import { setUsersList } from "../../Redux/Reducers.ts/userSlice";
 import { appLoading } from "../../Redux/Reducers.ts/appSlice";
 import booksStyles from "../../Styles/booksStyles";
+import LocalHeader from "../../Layout/LocalHeader";
 
 export const UsersList = () => {
   const columns = React.useMemo(() => userTableConfig, []);
   const dispatch = useAppDispatch();
   const { usersList } = useAppSelector((store) => store.user);
-  
+
   const options = React.useMemo(
     () => [
       {
@@ -35,6 +36,7 @@ export const UsersList = () => {
     ],
     []
   );
+  
   React.useEffect(() => {
     if (usersList.length < 1) {
       loadUsers({
@@ -52,25 +54,13 @@ export const UsersList = () => {
         flexDirection: "column",
       }}
     >
-      <Box sx={booksStyles.localHeaderWrapper}>
-        <Box sx={booksStyles.titleWrapper}>
-          <Typography sx={booksStyles.pageTitle}>Registered Users</Typography>
-          <Typography sx={booksStyles.pageCaption}>
-            Browse through the users list and edit details and permission.
-          </Typography>
-        </Box>
-        <Box sx={booksStyles.actionsWrapper}>
-          {options.map((action, index) => (
-            <Button
-              sx={{ ...booksStyles.button }}
-              startIcon={<action.Icon />}
-              key={`book-action-${index}`}
-            >
-              {action.label}
-            </Button>
-          ))}
-        </Box>
-      </Box>
+      <LocalHeader
+        pageTitle={"Registered Users"}
+        pageCaption={
+          "Browse through the users list and edit details and permission."
+        }
+        options={options}
+      />
       <Box sx={booksStyles.tableWrapper}>
         <TableTemplate
           label="Users"

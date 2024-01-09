@@ -25,8 +25,8 @@ export const Sidebar = () => {
         Icon: WidgetsRoundedIcon,
       },
       {
-        label: "Books",
-        path: "/books-list",
+        label: "Archive",
+        path: "/archive",
         Icon: LibraryBooksRoundedIcon,
       },
       {

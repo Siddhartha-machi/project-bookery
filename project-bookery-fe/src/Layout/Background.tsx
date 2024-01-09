@@ -1,4 +1,7 @@
+import React from "react";
+
 import { Box } from "@mui/material";
+
 import layoutStyles from "../Styles/layoutStyles";
 import { backgroundComponentProps } from "../Types/layoutTypes";
 

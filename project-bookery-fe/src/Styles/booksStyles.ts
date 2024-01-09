@@ -10,40 +10,6 @@ const booksStyles = createStyles({
     flexDirection: "column",
   },
 
-  localHeaderWrapper: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    py: 0.1,
-  },
-  titleWrapper: {
-    display: "flex",
-    flexDirection: "column",
-    ml: 1,
-  },
-  pageTitle: {
-    fontSize: "18px",
-    fontWeight: 900,
-    letterSpacing: 1,
-    color: styles.white9,
-  },
-  pageCaption: {
-    fontSize: "12px",
-    letterSpacing: 1,
-    color: styles.white2,
-  },
-  actionsWrapper: {
-    display: "flex",
-    gap: "12px",
-  },
-  button: {
-    textTransform: "none",
-    border: styles.borderLight,
-    borderRadius: GLOBAL_CONSTANTS.radius,
-    px: 2,
-    fontWeight: 600,
-    color: styles.white8,
-  },
   // Table styles
   tableWrapper: {
     display: "flex",

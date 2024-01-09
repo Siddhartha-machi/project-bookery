@@ -17,3 +17,12 @@ export type authWapperProps = {
   Component: FC;
   adminView?: boolean;
 };
+
+export type localHeaderProps = {
+  pageTitle: string;
+  pageCaption: string;
+  options?: {
+    label: string;
+    Icon: React.ElementType;
+  }[];
+};
