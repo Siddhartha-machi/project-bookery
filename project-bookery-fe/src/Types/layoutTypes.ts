@@ -15,5 +15,5 @@ export type backgroundComponentProps = {
 
 export type authWapperProps = {
   Component: FC;
-  AdminView?: boolean;
+  adminView?: boolean;
 };

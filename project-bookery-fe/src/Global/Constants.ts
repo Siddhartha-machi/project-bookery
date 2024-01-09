@@ -9,4 +9,10 @@ const GLOBAL_CONSTANTS = {
 
 export const SITE_ICON = LocalLibraryRoundedIcon;
 
+export enum ROLES {
+  admin = "admin",
+  club_admin = "club_admin",
+  user = "user",
+}
+
 export default GLOBAL_CONSTANTS;

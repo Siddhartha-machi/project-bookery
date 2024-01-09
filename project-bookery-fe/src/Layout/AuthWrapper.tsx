@@ -1,28 +1,27 @@
-import { Box } from "@mui/material";
+import React from "react";
+
+import { Navigate } from "react-router";
 
 import { authWapperProps } from "../Types/layoutTypes";
 import { useAppSelector } from "../Redux/hooks";
-import AppLayout from "./AppLayout";
-import { Navigate } from "react-router";
+import PageNotFound from "./PageNotFound";
+import { ROLES } from "../Global/Constants";
 
-const PageNotFound = () => {
-  return <Box>Oops! page not found</Box>;
-};
 const AuthWrapper = (props: authWapperProps) => {
-  const { AdminView, Component } = props;
+  const { adminView, Component } = props;
   const { role } = useAppSelector((store) => store.user.currentUser);
 
   if (!role) {
     return <Navigate to={"/signin"} />;
   }
-  if (AdminView) {
-    if (role === "admin") {
-      return <AppLayout Component={Component} />;
+  if (adminView) {
+    if (role === ROLES.admin) {
+      return <Component />;
     } else {
-      return <AppLayout Component={PageNotFound} />;
+      return <PageNotFound />;
     }
   }
-  return <AppLayout Component={Component} />;
+  return <Component />;
 };
 
 export default AuthWrapper;

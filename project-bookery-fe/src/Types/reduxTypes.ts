@@ -1,3 +1,4 @@
+import { ROLES } from "../Global/Constants";
 import { Book } from "./bookTypes";
 import { user } from "./userTypes";
 
@@ -16,7 +17,7 @@ export type userState = {
     username: string | null;
     first_name: string;
     last_name: string;
-    role: "admin" | "club_admin" | "user" | null;
+    role: ROLES | null;
   };
   usersList: user[];
 };

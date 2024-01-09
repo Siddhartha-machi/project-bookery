@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   Avatar,
   Backdrop,
@@ -12,7 +14,6 @@ import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 import AdminPanelSettingsRoundedIcon from "@mui/icons-material/AdminPanelSettingsRounded";
 import SupervisedUserCircleRoundedIcon from "@mui/icons-material/SupervisedUserCircleRounded";
 
-import { layoutProps } from "../Types/layoutTypes";
 import layoutStyles from "../Styles/layoutStyles";
 import { Sidebar } from "./Sidebar";
 import Background from "./Background";
@@ -20,9 +21,9 @@ import avatar from "../Assets/img5.jpeg";
 import { useAppSelector } from "../Redux/hooks";
 import { Loader } from "../Global/SupportComponets/Loader";
 import { strFormat } from "../Helpers/StringFunctions";
+import { Outlet } from "react-router-dom";
 
-const AppLayout = (props: layoutProps) => {
-  const { Component } = props;
+const AppLayout = () => {
   const { loading, loadingLabel } = useAppSelector((store) => store.app);
   const currentUser = useAppSelector((store) => store.user.currentUser);
   const { first_name, last_name, role } = currentUser;
@@ -79,7 +80,7 @@ const AppLayout = (props: layoutProps) => {
 
             <Avatar alt="user avatar" src={avatar} sx={layoutStyles.avatar} />
           </Box>
-          <Component />
+          <Outlet />
         </Box>
       </Box>
     </Background>
